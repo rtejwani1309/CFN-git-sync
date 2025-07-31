@@ -3,4 +3,4 @@ parameters:
 capabilities:
   - CAPABILITY_IAM
   - CAPABILITY_NAMED_IAM
-role-arn: arn:aws:iam::860278712199:role/cfn-git-sync
+role-arn: arn:aws:iam::860278712199:role/cfn-git-power
