@@ -1,0 +1,14 @@
+Resources:
+  TestStackSet1:
+    Type: AWS::CloudFormation::StackSet
+    DeletionPolicy: Retain
+    Properties:
+      StackSetName: TestStackSet12345
+      Description: Updatedescription1
+      PermissionModel: SELF_MANAGED
+      ManagedExecution:
+        Active: true
+      Tags:
+        - Key: tag1
+          Value: value1
+      TemplateURL: https://cf-templates-t8gwl7l02mhk-us-west-1.s3.us-west-1.amazonaws.com/s3.yaml
