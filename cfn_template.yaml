@@ -12,3 +12,27 @@ Resources:
         - Key: tag1
           Value: value1
       TemplateURL: https://cf-templates-t8gwl7l02mhk-us-west-1.s3.us-west-1.amazonaws.com/s3.yaml
+  EnhancedCloudFormationRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: CloudFormationGitSyncEnhancedRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: cloudformation.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: CloudFormationExecutionPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - '*'
+                Resource: '*'
+                Condition:
+                  StringEquals:
+                    'aws:RequestedRegion': !Ref 'AWS::Region'
+
