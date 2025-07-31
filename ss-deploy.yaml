@@ -1,4 +1,4 @@
-template-file-path: cfn.yaml
+template-file-path: cfn_template.yaml
 parameters:
 capabilities:
   - CAPABILITY_IAM
